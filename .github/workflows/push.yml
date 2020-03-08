@@ -1,5 +1,5 @@
 name: changes
-on: [push, pull_request] # push or pull, or any event with custom pr number or before/after commit sha
+on: push
 jobs:
   changes:
     runs-on: ubuntu-latest
