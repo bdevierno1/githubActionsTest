@@ -1,1 +1,1 @@
-echo Benjamin
+ print("Hello World")
