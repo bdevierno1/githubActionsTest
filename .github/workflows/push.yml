@@ -27,14 +27,18 @@ jobs:
       
     # Gets the files changed and stores it into a JSON
     - name: Get file Changes
-      uses: lots0logs/gh-action-get-changed-files@2.0.6
-      with:
-        token: GITHUB_TOKEN
-
- 
-    # Echo the changed files
-    - name: Echo file changes
-      run: cat ${HOME}/files.json
+      uses: trilom/file-changes-action@v1
+      
+    - name: test
+      run: |
+            cat $HOME/files.json
+            cat $HOME/files_modified.json
+            cat $HOME/files_added.json
+            cat $HOME/files_deleted.json
+            echo '${{ steps.file_changes.outputs.files}}'
+            echo '${{ steps.file_changes.outputs.files_modified}}'
+            echo '${{ steps.file_changes.outputs.files_added}}'
+            echo '${{ steps.file_changes.outputs.files_deleted}}
 
     
     
