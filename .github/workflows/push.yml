@@ -5,12 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: file_changes
-        uses: trilom/file-changes-action@v1
+        uses: trilom/file-changes-action@v1.2.0
         with:
-          # optional target repo
-          githubRepo: trilom/file-changes-action
           # optional token
           githubToken: ${{ secrets.BOT_TOKEN }}
+          
       - name: test
         run: |
           cat $HOME/files.json
