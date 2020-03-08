@@ -35,7 +35,9 @@ jobs:
         run: python test.py
         
       - name: Clone Repo
-        run: ls
+        run: |
+          git clone https://github.com/bdevierno1/openNetVM.git
+          ls
 
 
     
