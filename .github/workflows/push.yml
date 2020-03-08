@@ -10,8 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       
-      - name: Branch name
+      - name: Echo Branch name
         run: echo ${{github.ref}}
+        
+      - name: Test Branch Name
+        if: github.ref != 'refs/heads/develop'
+        run: echo Run on develop not ${{github.ref}}
       
       - name: get changed files
         id: getfile
