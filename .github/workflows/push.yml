@@ -15,7 +15,7 @@ jobs:
         
       - name: Test Branch Name
         if: github.ref != 'refs/heads/develop'
-        run: echo Run on develop not ${{github.ref}}
+        run: echo Run on refs/heads/develop not ${{github.ref}}
       
       - name: get changed files
         id: getfile
