@@ -6,22 +6,15 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
-      - id: file_changes
-        uses: trilom/file-changes-action@v1.2.0
-        with:
-          # optional token
-          githubToken: ${{ secrets.BOT_TOKEN }}
-          
-      - name: test
+      
+      - name: get changed files
+        id: getfile
         run: |
-          cat $HOME/files.json
-          cat $HOME/files_modified.json
-          cat $HOME/files_added.json
-          cat $HOME/files_deleted.json
-          echo '${{ steps.file_changes.outputs.files}}'
-          echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo '${{ steps.file_changes.outputs.files_added}}'
-          echo '${{ steps.file_changes.outputs.files_deleted}}'
+          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
+
+      - name: echo output
+        run: |
+          echo ${{ steps.getfile.outputs.files }}
 
     
     
