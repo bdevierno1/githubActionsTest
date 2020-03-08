@@ -1,5 +1,7 @@
 name: changes
-on: push
+on: 
+  push:
+
 jobs:
   changes:
     runs-on: ubuntu-latest
