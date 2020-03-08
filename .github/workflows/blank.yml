@@ -30,12 +30,11 @@ jobs:
       uses: lots0logs/gh-action-get-changed-files@2.0.6
       with:
         token: GITHUB_TOKEN
-        plaintext: true
+
  
     # Echo the changed files
     - name: Echo file changes
-      run: |
-        echo Changed files: ${{ steps.get_file_changes.outputs.files }}
+      run: cat ${HOME}/files.json
 
     
     
