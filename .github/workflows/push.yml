@@ -37,8 +37,10 @@ jobs:
       - name: Clone Repo
         run: |
           git clone https://github.com/bdevierno1/openNetVM.git
-          ls
-          grep -vf test.py test2.py
+          grep -vf test.py test2.py > file.txt
+          
+      - name: Print Differences
+        run: cat file.txt
 
 
     
