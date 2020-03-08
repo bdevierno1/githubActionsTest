@@ -1,11 +1,16 @@
-name: push-develop
-on: [push]
+name: changes
+on: [push, pull_request] # push or pull, or any event with custom pr number or before/after commit sha
 jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
       - id: file_changes
         uses: trilom/file-changes-action@v1
+        with:
+          # optional target repo
+          githubRepo: trilom/file-changes-action
+          # optional token
+          githubToken: ${{ secrets.BOT_TOKEN }}
       - name: test
         run: |
           cat $HOME/files.json
