@@ -38,7 +38,7 @@ jobs:
         run: |
           git clone https://github.com/bdevierno1/openNetVM.git
           ls
-          grep -vf test2.txt test1.txt
+          grep -vf test2.py test1.py
 
 
     
