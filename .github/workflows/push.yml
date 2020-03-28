@@ -16,7 +16,8 @@ jobs:
           python-version: '2.7'
           
       - name: Run Script
-        run: pylint
+        run: |
+          sudo apt-get install pylint
 
 
     
