@@ -10,4 +10,3 @@ jobs:
     - name: Install dependencies
       run: |
         python --version
-        python3 --version
