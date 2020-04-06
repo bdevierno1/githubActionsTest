@@ -11,7 +11,6 @@ jobs:
           python --version
           sudo apt-get pylint
           sudo apt-get update –fix-missing
-          # pylint test.py
           sudo apt-get install shellcheck
           shellcheck --version
           sudo apt-get install cppcheck
