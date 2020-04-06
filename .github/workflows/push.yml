@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Install dependencies
-         run:|
+        run: |
           python --version
           sudo apt-get install pylint
           pylint test.py
