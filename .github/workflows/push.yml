@@ -7,6 +7,7 @@ jobs:
       run: |
         python --version
         python3 --version
+        sudo apt-get install pylint
         pylint --version
         shellcheck --version
         cppcheck --version
