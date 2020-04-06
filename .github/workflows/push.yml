@@ -6,3 +6,8 @@ jobs:
     - name: Install dependencies
       run: |
         python --version
+        python3 --version
+        pylint --version
+        shellcheck --version
+        cppcheck --version
+        
