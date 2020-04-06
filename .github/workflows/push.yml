@@ -17,7 +17,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-        pip install shellcheck
+        apt-get install shellcheck
         pip install cppcheck
     - name: Run Pylint
       run: |
