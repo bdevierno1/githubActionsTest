@@ -9,10 +9,10 @@ jobs:
       - name: Install dependencies
         run: |
           python --version
-          sudo apt-get install pylint --fix missing
-          pylint test.py
-          sudo apt-get install shellcheck --fix missing
+          sudo apt-get install pylint
+          # pylint test.py
+          sudo apt-get install shellcheck
           shellcheck --version
-          sudo apt-get install cppcheck --fix missing
+          sudo apt-get install cppcheck
           cppcheck --version
         
