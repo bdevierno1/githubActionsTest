@@ -6,9 +6,7 @@ jobs:
     - name: Install dependencies
       run: |
         python --version
-        python3 --version
-        sudo apt-get install pylint
-        pylint --version
+        pylint test.py
         shellcheck --version
         cppcheck --version
         
