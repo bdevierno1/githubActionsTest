@@ -18,7 +18,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         sudo apt-get install shellcheck
-        pip install cppcheck
+        sudo apt-get install cppcheck
     - name: Run Pylint
       run: |
         cat .pylintrc
