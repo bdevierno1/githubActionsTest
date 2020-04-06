@@ -9,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: |
           python --version
-          sudo apt-get install pylint
+          # sudo apt-get install pylint
           pylint test.py
           shellcheck --version
           cppcheck --version
