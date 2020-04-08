@@ -15,7 +15,7 @@ jobs:
          sudo apt-get update -y
          sudo apt-get install -y cppcheck
       - name: Python Version 2
-        uses: cppcheck --version
+        run : cppcheck --version
 
   
   Python:
@@ -34,7 +34,7 @@ jobs:
         pylint --version
         
     - name: Python Version
-      uses: python --version
+      run : python --version
             pylint --version
       
   
