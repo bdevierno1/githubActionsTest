@@ -13,7 +13,7 @@ jobs:
         run: |
          cat /etc/os-release
          sudo apt-get update -y
-         sudo apt-get install -y cppcheck
+         sudo apt-get install -y cppcheck=1.82-1 amd64
       - name: Cppcheck Version
         run : cppcheck --version
 
@@ -30,7 +30,7 @@ jobs:
     - name: Install Requirements
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install pylint=1.8.3-1 all
         pylint --version
         
     - name: Python & Pylint Version
@@ -44,7 +44,8 @@ jobs:
       
       - name: Install Requirements
         run: |
-          sudo snap install shellcheck
-    
+          wget -qO- "https://github.com/koalaman/shellcheck/releases/download/v0.7.0/shellcheck-v0.7.0/linux.x86_64.tar.xz" | tar -xJv
+          sudo cp "shellcheck-v0.7.0/shellcheck" /usr/bin/
+          
       - name: Shellcheck Version
         run: shellcheck --version
