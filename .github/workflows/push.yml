@@ -29,9 +29,7 @@ jobs:
     
     - name: Install Requirements
       run: |
-        pip --version
         pip install pylint==2.4.4
-        pylint --version
         
     - name: Python & Pylint Version
       run : python --version
@@ -44,7 +42,7 @@ jobs:
       
       - name: Install Requirements
         run: |
-          apt install xz-utils
+          sudo apt install xz-utils
           wget -qO- "https://github.com/koalaman/shellcheck/releases/download/v0.7.0/shellcheck-v0.7.0/linux.x86_64.tar.xz" | tar -xJv
           sudo cp "shellcheck-v0.7.0/shellcheck" /usr/bin/
           
