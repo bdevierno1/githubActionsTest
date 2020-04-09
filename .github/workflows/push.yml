@@ -12,8 +12,7 @@ jobs:
       - name: Install Requirements
         run: |
          cat /etc/os-release
-         sudo apt-get update -y
-         sudo apt-get install -y cppcheck=1.82-1
+         sudo apt-get install cppcheck=1.82-1
       - name: Cppcheck Version
         run : cppcheck --version
 
